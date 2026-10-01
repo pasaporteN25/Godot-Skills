@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "enemy": {
+    "clock_moth": {"texto": "Una polilla de engranajes finos que recorre el aire de ida y vuelta, mordisqueando el tiempo. Nadie sabe qué hora marca."},
+    "ash_moth": {"texto": "Polilla gris de la costa de Ogigia. Nace de la ceniza que deja el tiempo al pasar por la isla."},
+    "marsh_crab": {"texto": "Vive en las marismas del río rojo. El agua ácida le empaña la coraza cada vez que vuelve a salir."},
+    "sand_crab": {"texto": "Pariente de la marisma que se acomodó a la arena de la isla de Cronos."},
+    "scorch_beetle": {"texto": "Escarabajo de escoria de las minas. Corre por el suelo y, si puede, por las paredes."},
+    "sleepwalker": {"texto": "El recuerdo de un soldado que camina dormido por Maratón. No tiene rostro: el sueño no se acuerda de él."},
+    "dream_owl": {"texto": "Plumas plateadas lavadas y ojos de moneda. Vuela sobre las llanuras que los Oniros sueñan."},
+    "sulfur_cloud": {"texto": "Aliento de las minas. No muerde ni golpea: solo deja la plata sin brillo."},
+    "dust_of_ages": {"texto": "El tiempo desmenuzado. Cada grano es un día que ya nadie recuerda."},
+    "poppy_spores": {"texto": "Nubes rojas que se sueltan de los campos de amapolas de Hipno. Adormecen hasta el filo de una espada."},
+    "will_o_wisp": {"texto": "Llama errante escapada de un horno de fundición. Busca calor, y la plata se lo da."},
+    "shadow": {"texto": "Almas sin rostro que buscan el óbolo para pagar a Caronte. No hacen daño: se llevan plata."},
+    "day_echo": {"texto": "Un día ya vivido que vuelve a buscar lo que se llevó. Se pega a Platero y le quita plata, como una sombra."},
+    "bronze_guard": {"texto": "Élite del ejército de Argantonio, de bronce tartésico. Escudo al frente y paso lento."},
+    "dream_hoplite": {"texto": "Un hoplita de bronce de rostro a medio definir: así recuerda Atenas a sus soldados."},
+    "titan_guard": {"texto": "Guardián de piedra de las cámaras donde Cronos sueña. Más viejo que el miedo."},
+    "slag_sentinel": {"texto": "Un centinela de las minas que ya no recuerda a quién vigilaba: tira escoria a lo que se mueve."},
+    "reflection": {"texto": "Plata pulida con forma de Platero. Argantonio la conjura para que Platero se enfrente a sí mismo.", "tambien_en": ["arc1_boss"]}
+  },
+  "boss": {
+    "centinel": {
+      "texto": "Coloso de piedra y escoria, erosionado por el tiempo: el subjefe de las minas.",
+      "consejo": "Fase 1: golpea el suelo y suelta dos ondas que hay que saltar; después queda aturdido y es el momento de cortarlo. Fase 2: se cubre de plata empañada y la espada rebota; pulilo (L) o usá el Yunque para abrir una ventana de daño, antes de que se vuelva a empañar."
+    },
+    "argantonio": {
+      "texto": "El rey de plata de Tartessos, que vive desde antes de las crónicas porque se negó al tiempo.",
+      "consejo": "Fase 1: ondas de plata (saltalas) y lluvia de esquirlas avisada. Fase 2: reflejos de Platero; mientras quede alguno es intocable, y caen de un golpe. Fase 3: se debilita y al final hay que elegir: golpearlo (J) o liberarlo (E). Las dos lo derrotan, pero cambian el desenlace."
+    },
+    "cyclops": {
+      "texto": "Brontes, el Cíclope herrero. Antes de forjar la espada de Plata de cielo quiere saber si Platero la merece.",
+      "consejo": "Lo cubre el yunque que lleva al frente. Se lo hiere cuando queda exhausto tras atacar y, sobre todo, devolviéndole sus chispas con un bloqueo perfecto de la guardia (U). Fase 1: tres chispas en abanico. Fase 2: alterna chispas y un martillazo que levanta dos ondas de suelo."
+    },
+    "polemarch": {
+      "texto": "El recuerdo del general ateniense caído en Maratón, que sigue cargando contra un enemigo que ya no está.",
+      "consejo": "Su escudo cubre el frente: un tajo de cara rebota y mella la espada. Esquivá la embestida y pegale por la espalda, desde arriba con el Yunque o cuando queda exhausto tras frenar. En la fase 2 embiste más rápido y, al frenar, clava la lanza: dos ondas a ras de suelo que hay que saltar."
+    },
+    "hypnos": {
+      "texto": "Hijo de la Noche y hermano de la Muerte. No es un villano: es un carcelero cansado que custodia un sueño más grande que él.",
+      "consejo": "Fase 1: flota y alterna lluvia de esporas (lentas, se esquivan) con una onda de arrullo a ras de suelo (se salta). Tras cada ataque se posa exhausto: ahí se lo hiere. Fase 2: invoca sombras y, mientras haya alguna, es intocable; la espada las atraviesa, así que hay que barrerlas con el Yunque."
+    },
+    "briareus": {
+      "texto": "Briareo, el Hecatónquiro: uno de los Cien-brazos, carcelero del titán dormido. No odia a Platero: custodia.",
+      "consejo": "Sus brazos lo cubren y la espada rebota, salvo cuando queda exhausto tras golpear el suelo. Fase 1: tres brazos golpean columnas avisadas. Fase 2: cinco columnas y, al terminar, una onda de brazos a ras de suelo que hay que saltar."
+    },
+    "cronos": {
+      "texto": "El titán dormido en su isla, encadenado por el sueño. Lo que sueña es el tiempo de los mortales.",
+      "consejo": "Fase 1: dormido, sus sueños atacan (lluvia de arena avisada y una manecilla gigante que gira); solo se lo hiere cuando queda exhausto. Fase 2: empuña la hoz y barre el suelo con una doble onda (hay que saltar dos veces). Fase 3: se debilita y al final hay que elegir: golpearlo (J) o dejarlo dormir (E)."
+    }
+  },
+  "patron": {
+    "hephaestus": {"texto": "El dios herrero, cojo y poco amado por los suyos. Entiende la plata mejor que nadie: sabe que afilar es quitar."},
+    "artemis": {"texto": "La cazadora de la luna. Su luz sirve de flecha y también de camino en el aire."}
+  },
+  "sword": {
+    "heirloom_falcata": {"texto": "La falcata de la familia de Platero: hoja curva de plata, de las que se forjaban al sur de la península. Es lo que hay."},
+    "sky_silver": {"texto": "Forjada por Brontes con plata caída del cielo. Corta más, llega más lejos y se gasta más despacio."}
+  },
+  "place": {
+    "arc_i": {"texto": "Hacia el año 500 a. C., en un reino del sur de la península ibérica con ciudades parecidas a las de la costa andaluza. Platero es un joven orfebre de la plata; Tartessos tiene un rey que no quiere morir."},
+    "arc_ii": {"texto": "Diez años después, el mismo Platero, ya mayor, camina por una Grecia que no es la de las crónicas sino la que sueñan los Oniros: mármol y olivo vistos como recuerdo ajeno."},
+    "arc_iii": {"texto": "480 a. C. Una isla remota al oeste donde Zeus encadenó a Cronos con el sueño. El tiempo, allí, casi no corre."}
+  }
+}

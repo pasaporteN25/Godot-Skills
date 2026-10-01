@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "titulo": "La espada y el filo",
+  "subtitulo": "Por qué la espada se gasta y qué hacer",
+  "orden": 2,
+  "bloques": [
+    {"tipo": "texto", "texto": "La espada de plata es el arma principal, pero cada golpe que conecta le quita filo. Con el filo bajo corta cada vez menos; con el filo en cero no se rompe, pero casi no daña."},
+    {"tipo": "titulo", "texto": "Afilar quita metal"},
+    {"tipo": "texto", "texto": "Afilar (en un altar o en la fragua del Umbral) devuelve el filo hasta el máximo, pero el máximo baja: afilar es quitar. Nunca se recupera lo perdido, y el máximo no baja de un piso para que la espada nunca quede inútil. En un altar afilar cuesta el doble que en la fragua del Umbral."},
+    {"tipo": "titulo", "texto": "Empañada y blanda"},
+    {"tipo": "texto", "texto": "El azufre y el polvo empañan la hoja: mientras está empañada, pega a la mitad. Pulirla (L) la limpia. El calor de los hornos ablanda la plata: pega menos y pierde filo hasta que se enfría."},
+    {"tipo": "titulo", "texto": "Escudos y armadura"},
+    {"tipo": "texto", "texto": "Golpear un escudo mella la espada y no daña. La armadura de un enemigo baja el daño de cada golpe, y la espada ignora una parte que crece con el filo: una hoja sin filo rebota contra el bronce. Mirá las entradas de Espadas y de cada enemigo para ver los números."}
+  ]
+}
