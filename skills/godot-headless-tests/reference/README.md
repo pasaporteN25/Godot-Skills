@@ -4,7 +4,8 @@ Copias de dos proyectos reales. Son fotos: si el proyecto cambió, mirá su repo
 
 ## `scenetree/` — sin framework (Former Walker)
 - `all.gd`: runner que encuentra todos los `tests/headless/*.gd`, corre `run.gd` primero y cada uno en su propio
-  proceso; falla con código ≠ 0 o con `SCRIPT ERROR`/`Parse Error`/`Failed to load script`. Filtro `-- solo=a,b`.
+  proceso (salida por `--log-file`); falla con código ≠ 0 o con `SCRIPT ERROR`/`Parse Error`/`Failed to load script`,
+  y corta un test colgado (error en tiempo de ejecución o límite de tiempo). Filtros `-- solo=a,b` y `-- limite=N`.
   **Genérico**: solo cambian `DIR` y `FIRST`.
 - `test_template.gd`: esqueleto de un test (`check`, archivo temporal, resumen en la última línea, código de salida).
 - `test.ps1`: atajo de Windows (importa y corre `all.gd`; `-Solo wiki`).
