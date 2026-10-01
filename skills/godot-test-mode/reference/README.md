@@ -1,6 +1,6 @@
 # Implementación de referencia (Former Walker, 2026-10-01)
 
-Copia de los archivos reales tal como quedaron en el proyecto de origen. Es una foto: si el proyecto cambió, mirá su
+Copia de los archivos reales tal como quedaron en el proyecto de origen (`pasaporteN25/formerWalker`, commit `b32028d`). Es una foto: si el proyecto cambió, mirá su
 repositorio. Nada de esto corre por sí solo fuera de Former Walker.
 
 ## Casi genéricos (adaptar rutas y nombres)

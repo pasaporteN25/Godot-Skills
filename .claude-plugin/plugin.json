@@ -1,0 +1,10 @@
+{
+  "name": "godot-skills",
+  "version": "0.2.0",
+  "description": "Skills para juegos Godot 4 (GDScript): modo de pruebas, wiki por datos, controles remapeables y tests headless con CI.",
+  "author": {
+    "name": "pasaporteN25"
+  },
+  "repository": "https://github.com/pasaporteN25/Godot-Skills",
+  "keywords": ["godot", "gdscript", "gamedev", "testing", "wiki", "input"]
+}

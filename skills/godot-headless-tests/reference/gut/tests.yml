@@ -1,0 +1,72 @@
+# Tests automáticos (D-030): en cada push y en cada pull request, GitHub descarga Godot,
+# importa el proyecto y corre todos los tests de GUT. Si algo falla, el commit queda con ❌.
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# Si se sube otro commit mientras corre, se cancela la corrida vieja.
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: "4.7.2"
+
+jobs:
+  gut:
+    name: Tests de GUT
+    runs-on: ubuntu-24.04  # fijo: ubuntu-latest pasa a Ubuntu 26 en octubre de 2026
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+
+      # Godot pesa ~60 MB: se guarda en la caché de GitHub para no bajarlo cada vez.
+      - name: Caché de Godot
+        id: cache-godot
+        uses: actions/cache@v6
+        with:
+          path: ~/godot
+          key: godot-${{ env.GODOT_VERSION }}-linux
+
+      - name: Descargar Godot
+        if: steps.cache-godot.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/godot
+          curl -fsSL -o godot.zip "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+          unzip -q godot.zip -d ~/godot
+          mv ~/godot/Godot_v${GODOT_VERSION}-stable_linux.x86_64 ~/godot/godot
+          chmod +x ~/godot/godot
+
+      - name: Versión de Godot
+        run: ~/godot/godot --version
+
+      # La carpeta .godot (caché de importación) no se sube a git: hay que crearla.
+      - name: Importar el proyecto
+        run: ~/godot/godot --headless --path . --import
+
+      # Ningún test carga las herramientas de tools/: al menos se revisa que compilen.
+      - name: Revisar la sintaxis de tools/
+        run: |
+          for f in tools/*.gd; do
+            echo "::group::$f"
+            ~/godot/godot --headless --path . --check-only -s "$f"
+            echo "::endgroup::"
+          done
+
+      - name: Correr los tests
+        run: |
+          set -o pipefail
+          ~/godot/godot --headless --path . -s addons/gut/gut_cmdln.gd -gdir=res://tests -gexit 2>&1 | tee gut.log
+          # GUT saltea sin avisar un test con errores de sintaxis (y termina en verde):
+          # una corrida sana no tiene ninguna de estas líneas.
+          if grep -nE "SCRIPT ERROR|Parse Error|Failed to load script" gut.log; then
+            echo "::error::Hay scripts con errores (ver las líneas de arriba)"
+            exit 1
+          fi

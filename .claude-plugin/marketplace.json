@@ -1,0 +1,15 @@
+{
+  "name": "godot-skills",
+  "description": "Skills de Claude Code para juegos Godot 4 (GDScript).",
+  "owner": {
+    "name": "pasaporteN25"
+  },
+  "plugins": [
+    {
+      "name": "godot-skills",
+      "source": "./",
+      "description": "Skills para juegos Godot 4 (GDScript): modo de pruebas, wiki por datos, controles remapeables y tests headless con CI.",
+      "version": "0.2.0"
+    }
+  ]
+}
