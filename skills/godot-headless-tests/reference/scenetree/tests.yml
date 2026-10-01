@@ -1,0 +1,69 @@
+# Tests automáticos: en cada push a master y en cada pull request, GitHub descarga Godot, importa el proyecto,
+# revisa que compilen las herramientas de tools/ y corre TODOS los tests headless (tests/headless/all.gd).
+# Mismo esquema que JuegoA/TDv1 (D-030 de ese proyecto).
+name: Tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+# Si se sube otro commit mientras corre, se cancela la corrida vieja.
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: "4.7.2"
+
+jobs:
+  headless:
+    name: Tests headless
+    runs-on: ubuntu-24.04  # fijo: ubuntu-latest cambia solo
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+
+      # Godot pesa ~60 MB: se guarda en la caché de GitHub para no bajarlo cada vez.
+      - name: Caché de Godot
+        id: cache-godot
+        uses: actions/cache@v6
+        with:
+          path: ~/godot
+          key: godot-${{ env.GODOT_VERSION }}-linux
+
+      - name: Descargar Godot
+        if: steps.cache-godot.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/godot
+          curl -fsSL -o godot.zip "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+          unzip -q godot.zip -d ~/godot
+          mv ~/godot/Godot_v${GODOT_VERSION}-stable_linux.x86_64 ~/godot/godot
+          chmod +x ~/godot/godot
+
+      - name: Versión de Godot
+        run: ~/godot/godot --version
+
+      # La carpeta .godot (caché de importación) no se sube a git: hay que crearla.
+      - name: Importar el proyecto
+        run: ~/godot/godot --headless --path . --import
+
+      # Ningún test carga las herramientas de tools/: al menos se revisa que compilen.
+      - name: Revisar la sintaxis de tools/
+        run: |
+          fail=0
+          for f in tools/*.gd; do
+            out=$(~/godot/godot --headless --path . --check-only -s "$f" 2>&1) || fail=1
+            if echo "$out" | grep -nE "SCRIPT ERROR|Parse Error|Failed to load script"; then
+              echo "::error file=$f::no compila"
+              fail=1
+            fi
+          done
+          exit $fail
+
+      - name: Correr los tests
+        run: ~/godot/godot --headless --path . -s tests/headless/all.gd

@@ -1,6 +1,6 @@
 ---
 name: godot-remappable-controls
-description: Agrega a un juego Godot 4 (GDScript) una pantalla de controles remapeables (teclas y botones de mando) sobre el InputMap, con guardado de preferencias. Usalo siempre que el usuario pida "remapear teclas", "cambiar los controles", "pantalla de controles", "rebind", "configurar teclado/mando", "que las teclas se puedan cambiar", o cuando una spec/constitución del juego prometa teclas remapeables y no exista la pantalla; también cuando otra feature (modo de pruebas, atajos de debug) necesite teclas que el jugador pueda cambiar. Nació en Former Walker (spec 015).
+description: 'Agrega a un juego Godot 4 (GDScript) una pantalla de controles remapeables (teclas y botones de mando) sobre el InputMap, con guardado de preferencias. Usalo siempre que el usuario pida "remapear teclas", "cambiar los controles", "pantalla de controles", "rebind", "configurar teclado/mando", "que las teclas se puedan cambiar", o cuando una spec/constitución del juego prometa teclas remapeables y no exista la pantalla; también cuando otra feature (modo de pruebas, atajos de debug) necesite teclas que el jugador pueda cambiar.'
 ---
 
 # Controles remapeables (Godot 4)
@@ -32,7 +32,7 @@ Leé el `project.godot` (`[input]`) y el `CLAUDE.md`/specs del proyecto: qué ac
 - Al sumar el botón al menú o la pausa, actualizá los tests que cuentan botones.
 
 ## Verificación
-Tests headless (ver `reference/tests/controls.gd`): valores de fábrica, cambio inmediato, ejes conservados, solo diferencias guardadas, intercambio y rechazo, restaurar, persistencia (guardar → restaurar → recargar), archivos inválidos, captura con eventos simulados (`screen._input(event)`), Esc, y que menú y pausa la abran. Además **mirá la pantalla de verdad**: corré Godot con ventana (`--path . -s script.gd --resolution 1280x720`, sin `--headless`), armala en un script temporal y guardá `get_viewport().get_texture().get_image().save_png(...)`; así se ven solapamientos y transparencias que los tests no ven. Cerrá con la suite general del proyecto en verde y un commit solo con lo propio.
+Escribí los tests en el formato que ya usa el proyecto (GUT, gdUnit4 o scripts `extends SceneTree`) y **confirmá que el comando de «hecho» del proyecto los corre**: en Former Walker `controls.gd` quedó fuera de `run.gd` (ver `godot-headless-tests`). Tests headless (ver `reference/tests/controls.gd`): valores de fábrica, cambio inmediato, ejes conservados, solo diferencias guardadas, intercambio y rechazo, restaurar, persistencia (guardar → restaurar → recargar), archivos inválidos, captura con eventos simulados (`screen._input(event)`), Esc, y que menú y pausa la abran. Además **mirá la pantalla de verdad**: corré Godot con ventana (`--path . -s script.gd --resolution 1280x720`, sin `--headless`), armala en un script temporal y guardá `get_viewport().get_texture().get_image().save_png(...)`; así se ven solapamientos y transparencias que los tests no ven. Cerrá con la suite general del proyecto en verde y un commit solo con lo propio.
 
 ## Relacionadas
-`godot-test-mode` usa esta pantalla para los atajos de pruebas; `godot-wiki` muestra una entrada «Controles» leída del InputMap.
+`godot-test-mode` usa esta pantalla para los atajos de pruebas; `godot-wiki` muestra una entrada «Controles» leída del InputMap; `godot-headless-tests` arma la suite completa y el CI.
