@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Former Walker\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: scripts/bosses/argantonio_boss.gd
+msgid "Las crónicas me dieron por muerto. Se equivocaron."
+msgstr "The chronicles gave me up for dead. They were wrong."
+
+#: scripts/bosses/argantonio_boss.gd
+msgid "Ven cómo eres: dos veces, y ninguna de ellas descansa."
+msgstr "See what you are: twice over, and neither of them rests."
+
+#: scripts/bosses/argantonio_boss.gd
+msgid "Ya no recuerdo por qué me quedé."
+msgstr "I no longer remember why I stayed."
+
+#: scripts/bosses/argantonio_boss.gd
+msgid "Golpéame, y termino. O déjame ir, y termino igual. Elige."
+msgstr "Strike me, and I end. Or let me go, and I end all the same. Choose."
+
+#: scripts/bosses/argantonio_boss.gd
+msgid "Liberar a Argantonio"
+msgstr "Free Argantonio"
+
+#: scripts/bosses/argantonio_boss.gd
+msgid "Gracias. Ya puedo dejar que pase."
+msgstr "Thank you. Now I can let it pass."
+
+#: scripts/bosses/briareus_boss.gd
+msgid "Cien brazos, y ninguno para dejarte pasar."
+msgstr "A hundred arms, and not one to let you through."
+
+#: scripts/bosses/briareus_boss.gd
+msgid "Lo vigilo desde antes de que hubiera nombre para el tiempo."
+msgstr "I have watched over him since before time had a name."
+
