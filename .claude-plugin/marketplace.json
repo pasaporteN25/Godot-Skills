@@ -9,7 +9,7 @@
       "name": "godot-skills",
       "source": "./",
       "description": "Skills para juegos Godot 4 (GDScript): modo de pruebas, wiki por datos, controles remapeables y tests headless con CI.",
-      "version": "0.2.0"
+      "version": "0.3.0"
     }
   ]
 }
