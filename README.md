@@ -11,6 +11,7 @@ Skills de [Claude Code](https://claude.com/claude-code) para juegos hechos en **
 | [`godot-remappable-controls`](skills/godot-remappable-controls/SKILL.md) | **Controles remapeables** (teclas y botones de mando) sobre el InputMap, con guardado de preferencias y pantalla de controles. |
 | [`godot-localization`](skills/godot-localization/SKILL.md) | **Idiomas** (español → inglés y los que vengan) con el sistema del motor: el texto fuente es su propia clave, un extractor, un `.po` por idioma, selector en el menú y tests contra textos sin traducir; incluye cómo medir el costo antes de empezar. |
 | [`godot-headless-tests`](skills/godot-headless-tests/SKILL.md) | **Tests headless y CI**: una suite que corre todos los tests con un comando (GUT o scripts `SceneTree`), falla ante un `SCRIPT ERROR` y corre en GitHub Actions. |
+| [`godot-mainline-export`](skills/godot-mainline-export/SKILL.md) | **Exportar y ejecutar builds** para Windows, Android y Linux usando `main`/`master`, con verificación de presets, plantillas, SDK y dispositivos. |
 
 Las cuatro primeras nacieron en *Former Walker* (la wiki y el modo de pruebas también existen en *TDv1*) y se
 complementan: el modo de pruebas usa la pantalla de controles para sus atajos y muestra la wiki toda abierta, y la wiki
@@ -35,11 +36,10 @@ claude plugin install godot-skills@godot-skills
 `C:\Users\<usuario>\.claude\skills\`):
 
 ```bash
-cp -r skills/godot-test-mode skills/godot-wiki skills/godot-remappable-controls skills/godot-headless-tests skills/godot-localization ~/.claude/skills/
+cp -r skills/godot-test-mode skills/godot-wiki skills/godot-remappable-controls skills/godot-headless-tests skills/godot-localization skills/godot-mainline-export ~/.claude/skills/
 ```
 
-Claude Code las carga solas cuando el pedido encaja con su descripción (por ejemplo «agregá un modo admin para probar
-niveles», «hacé una wiki con los enemigos», «que se puedan remapear las teclas» o «poné los tests en GitHub»).
+Claude Code las carga solas cuando el pedido encaja con su descripción.
 
 ## Estructura
 
