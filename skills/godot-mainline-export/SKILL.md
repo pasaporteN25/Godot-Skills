@@ -5,7 +5,7 @@ description: 'Exporta y ejecuta builds de Godot para Windows, Android y Linux, s
 
 # Exportar builds Godot desde main o master
 
-Usá esta skill cuando el usuario pida generar, actualizar, instalar o ejecutar un `.exe`, `.apk` o build nativo de Linux de un proyecto Godot.
+Usá esta skill cuando el usuario pida generar, actualizar, instalar o ejecutar un `.exe`, `.apk` o build nativo de Linux de un proyecto Godot. Si está configurando una máquina o proyecto por primera vez, empezá por `godot-project-onboarding` para revisar el entorno y la guía del proyecto.
 
 ## Fuente obligatoria
 

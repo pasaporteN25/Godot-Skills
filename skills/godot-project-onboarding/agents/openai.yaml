@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Project Onboarding"
+  short_description: "Prepara Godot y guía el setup de proyectos."
+  default_prompt: "Usa $godot-project-onboarding para revisar y preparar este equipo para trabajar en el proyecto Godot actual."
