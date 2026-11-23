@@ -8,6 +8,7 @@ Skills de [Claude Code](https://claude.com/claude-code) para juegos hechos en **
 |---|---|
 | [`godot-project-onboarding`](skills/godot-project-onboarding/SKILL.md) | **Empezá por acá** al preparar una computadora o proyecto: revisa Godot, las herramientas disponibles y los pasos para abrir, probar y exportar. |
 | [`godot-test-mode`](skills/godot-test-mode/SKILL.md) | **Modo de pruebas / admin**: saltar a cualquier etapa, sala, oleada o jefe con equipo inicial, invulnerabilidad, matar enemigos, velocidad, cajas de colisión y estadísticas por nivel, en un ejecutable/feature aparte con guardado propio. |
+| [`godot-code-console`](skills/godot-code-console/SKILL.md) | **Consola de códigos** en Opciones: el jugador escribe un código y se activa un efecto (modo de pruebas, trucos, contenido); códigos como datos abiertos, con lista pública y persistencia propia. |
 | [`godot-wiki`](skills/godot-wiki/SKILL.md) | **Wiki / bestiario** dentro del juego que se arma leyendo los Resources (no se desactualiza), con entradas cerradas hasta descubrirlas, índice «dónde aparece» y artículos de guía. |
 | [`godot-remappable-controls`](skills/godot-remappable-controls/SKILL.md) | **Controles remapeables** (teclas y botones de mando) sobre el InputMap, con guardado de preferencias y pantalla de controles. |
 | [`godot-localization`](skills/godot-localization/SKILL.md) | **Idiomas** (español → inglés y los que vengan) con el sistema del motor: el texto fuente es su propia clave, un extractor, un `.po` por idioma, selector en el menú y tests contra textos sin traducir; incluye cómo medir el costo antes de empezar. |
@@ -43,7 +44,7 @@ claude plugin install godot-skills@godot-skills
 `C:\Users\<usuario>\.claude\skills\`):
 
 ```bash
-cp -r skills/godot-project-onboarding skills/godot-test-mode skills/godot-wiki skills/godot-remappable-controls skills/godot-headless-tests skills/godot-localization skills/godot-mainline-export ~/.claude/skills/
+cp -r skills/godot-project-onboarding skills/godot-test-mode skills/godot-code-console skills/godot-wiki skills/godot-remappable-controls skills/godot-headless-tests skills/godot-localization skills/godot-mainline-export ~/.claude/skills/
 ```
 
 Claude Code las carga solas cuando el pedido encaja con su descripción.
