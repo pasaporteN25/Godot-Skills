@@ -13,6 +13,7 @@ Skills de [Claude Code](https://claude.com/claude-code) para juegos hechos en **
 | [`godot-localization`](skills/godot-localization/SKILL.md) | **Idiomas** (español → inglés y los que vengan) con el sistema del motor: el texto fuente es su propia clave, un extractor, un `.po` por idioma, selector en el menú y tests contra textos sin traducir; incluye cómo medir el costo antes de empezar. |
 | [`godot-headless-tests`](skills/godot-headless-tests/SKILL.md) | **Tests headless y CI**: una suite que corre todos los tests con un comando (GUT o scripts `SceneTree`), falla ante un `SCRIPT ERROR` y corre en GitHub Actions. |
 | [`godot-mainline-export`](skills/godot-mainline-export/SKILL.md) | **Exportar y ejecutar builds** para Windows, Android y Linux usando `main`/`master`, con verificación de presets, plantillas, SDK y dispositivos. |
+| [`godot-banner-editor`](skills/godot-banner-editor/SKILL.md) | **Editor cosmético de estandartes**: acota piezas y paletas, controles mouse/touch, persistencia segura, preview y pruebas. |
 
 Las skills de modo de pruebas, wiki, controles remapeables y localización nacieron en *Former Walker* (la wiki y el modo de pruebas también existen en *TDv1*). El modo de pruebas usa la pantalla de controles para sus atajos y muestra la wiki toda abierta; la wiki tiene una entrada «Controles» que refleja el remapeo. `godot-headless-tests` junta lo aprendido en los dos proyectos sobre tests y CI, y esas cuatro skills la usan para que sus tests no queden fuera de la suite.
 
@@ -43,7 +44,7 @@ claude plugin install godot-skills@godot-skills
 `C:\Users\<usuario>\.claude\skills\`):
 
 ```bash
-cp -r skills/godot-project-onboarding skills/godot-test-mode skills/godot-wiki skills/godot-remappable-controls skills/godot-headless-tests skills/godot-localization skills/godot-mainline-export ~/.claude/skills/
+cp -r skills/godot-project-onboarding skills/godot-test-mode skills/godot-wiki skills/godot-remappable-controls skills/godot-headless-tests skills/godot-localization skills/godot-mainline-export skills/godot-banner-editor ~/.claude/skills/
 ```
 
 Claude Code las carga solas cuando el pedido encaja con su descripción.
