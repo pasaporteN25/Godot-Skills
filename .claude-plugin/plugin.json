@@ -1,7 +1,7 @@
 {
   "name": "godot-skills",
-  "version": "0.6.0",
-  "description": "Skills para juegos Godot 4 (GDScript): onboarding, modo de pruebas, wiki por datos, controles remapeables, tests headless, exportación desde main/master y editor cosmético de estandartes.",
+  "version": "0.7.0",
+  "description": "Skills para juegos Godot 4 (GDScript): onboarding, modo de pruebas, wiki por datos, controles remapeables, tests headless, exportación desde main/master, editor cosmético de estandartes y transiciones con pantalla de carga.",
   "author": {
     "name": "pasaporteN25"
   },
